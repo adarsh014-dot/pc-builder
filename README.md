@@ -3,7 +3,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
-![tests](https://img.shields.io/badge/tests-18%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-21%20passing-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
 Pick PC parts and see **every** reason they conflict — socket, memory type, physical clearance,
@@ -59,7 +59,7 @@ next 50 W, which is how people actually buy them.
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # typecheck + production build
-npm test         # 18 unit tests
+npm test         # 21 unit tests
 ```
 
 ## Layout
@@ -69,11 +69,15 @@ src/
   data/parts.ts        static catalogue: CPUs, boards, memory, GPUs, coolers, PSUs, cases, drives
   lib/compat.ts        the rule engine — pure, no React
   lib/compat.test.ts   18 tests covering every rule and the power maths
+  App.test.tsx         3 render tests: the app mounts and paints its default state
   App.tsx              UI: part pickers + live verdict panel
 ```
 
 The catalogue is plain data on purpose: no network calls, no API keys, no rate limits, and the engine
 stays deterministic — which is what makes it testable.
+
+Tests come in two layers: 18 on the rule engine (pure, no DOM) and 3 render tests using
+`renderToString`, which prove the UI actually mounts rather than merely compiling.
 
 ## Known limits (stated, not hidden)
 

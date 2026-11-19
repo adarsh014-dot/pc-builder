@@ -112,7 +112,7 @@ const referenceBuild = (): Build => ({
   gpu: gpus[2],
   cooler: coolers[1],
   psu: psus[3],
-  pcCase: cases[2],
+  pcCase: cases[3],
   storage: storages[1],
 });
 
