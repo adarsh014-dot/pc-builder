@@ -9,6 +9,8 @@
 Pick PC parts and see **every** reason they conflict — socket, memory type, physical clearance,
 power headroom — each one traced to a named rule you can read and test.
 
+**[Live demo →](https://adarsh014-dot.github.io/pc-builder/)**
+
 ```
 CPU socket ──┐
 RAM type ────┼──▶ checkBuild() ──▶ Issue[]  ──▶ verdict: ok | warn | error
